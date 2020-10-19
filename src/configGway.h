@@ -1,8 +1,8 @@
 // 1-channel LoRa Gateway for ESP32 and ESP8266
 // Copyright (c) Maarten Westenberg 2016-2020 
 
-#define VERSION "V.6.2.6.EU868; PlatformIO 200908 d"
-
+//#define VERSION "V.6.2.6.EU915; PlatformIO 200908 d"
+#define VERSION "V.6.2.6.AS2; PlatformIO 200908 d"
 //
 // Based on work done by Thomas Telkamp for Raspberry PI 1ch gateway and many others.
 //
@@ -83,10 +83,13 @@
 // IN865_867	India
 // CN779-787	(Not Used!)
 // EU433		Europe
-// AS923		(Not Used)
+// AS920_923    AS1
+// AS923_925    AS2
 // You can find the definitions in "loraModem.h" and frequencies in
 // See https://www.thethingsnetwork.org/docs/lorawan/frequency-plans.html
-#define EU863_870 1
+//#define EU433 
+//#define US902_928
+#define AS923_925
  
 
 // Define the CLASS mode of the gateway
@@ -116,7 +119,7 @@
 // the webserver and it will be stored in SPIFF
 // NOTE: The frequency is set in the loraModem.h file and is default 868.100000 MHz.
 #if !defined _SPREADING
-#	define _SPREADING SF9
+#	define _SPREADING SF7
 #endif
 
 // Channel Activity Detection
@@ -198,7 +201,8 @@
 // Also, normally the server will respond with SF12 in the RX2 timeslot.
 // For TTN, the RX2 timeslot is SF9, so we should use that one for TTN
 #if !defined _RX2_SF
-#	define _RX2_SF 9
+// #	define _RX2_SF 9
+#	define _RX2_SF 10  //10 for AS1 and 2
 #endif
 
 
@@ -264,7 +268,7 @@
 // ntp
 // Please add daylight saving time to NTP_TIMEZONES when desired
 #define NTP_TIMESERVER "nl.pool.ntp.org"	// Country and region specific
-#define NTP_TIMEZONES	2					// How far is our Timezone from UTC (excl daylight saving/summer time)
+#define NTP_TIMEZONES	8					// How far is our Timezone from UTC (excl daylight saving/summer time)
 #define SECS_IN_HOUR	3600
 #define NTP_INTR 0							// Do NTP processing with interrupts or in loop();
 
@@ -360,6 +364,7 @@
 // and need no changing. When _REPEATER function is selected, we do not
 // use the backend function to send message to server over MQTT.
 #if _REPEATER==0
-#	define _TTNSERVER "router.eu.thethings.network"
+//#	define _TTNSERVER "router.eu.thethings.network"
+#	define _TTNSERVER "router.as2.thethings.network"
 #	define _TTNPORT 1700							// Standard port for TTN
 #endif

@@ -42,7 +42,7 @@ void init_oLED()
 	display.init();
 	delay(100);
 
-	display.flipScreenVertically();
+	//display.flipScreenVertically();
 	display.setFont(ArialMT_Plain_24);
 	display.setTextAlignment(TEXT_ALIGN_LEFT);
 	display.drawString(0, 24, "STARTING");
@@ -92,7 +92,7 @@ void msg_oLED(String mesg)
 #if _OLED>=1
     display.clear();
 
-	display.flipScreenVertically();
+	//display.flipScreenVertically();
 	display.setFont(ArialMT_Plain_24);
 	display.setTextAlignment(TEXT_ALIGN_LEFT);
 	display.drawString(0, 24, String(mesg));
@@ -109,7 +109,7 @@ void msg_lLED(String mesg, String mesg2)
 #if _OLED>=1
     display.clear();
 
-	display.flipScreenVertically();
+	//display.flipScreenVertically();
 	display.setFont(ArialMT_Plain_16);
 	display.setTextAlignment(TEXT_ALIGN_LEFT);
 	display.drawString(0, 8, String(mesg));

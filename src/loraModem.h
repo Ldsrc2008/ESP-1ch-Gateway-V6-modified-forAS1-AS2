@@ -158,6 +158,36 @@ vector freqs [] = {
 	{         0,   0, 0,  0, 866550000, 125, 10, 10}			// RX2
 };
 
+//AS920_923 AS1
+#elif defined(AS920_923)
+// AS1 plan or TTN/Lora frequencies For Japan, Malaysia, Singapore 
+vector freqs [] = { 
+	{ 923200000, 125, 7, 12, 923200000, 125, 7, 12},			// Channel 0, 923.2 MHz primary
+	{ 923400000, 125, 7, 12, 923400000, 125, 7, 12},			// Channel 1, 923.4 MHz primary
+	{ 922200000, 125, 7, 12, 922200000, 125, 7, 12},			// Channel 2, 922.2 MHz primary
+	{ 922400000, 125, 7, 12, 922400000, 125, 7, 12},			// Channel 3, 922.4 MHz primary
+	{ 922600000, 125, 7, 12, 922600000, 125, 7, 12},			// Channel 4, 922.6 MHz primary
+	{ 922800000, 125, 7, 12, 922800000, 125, 7, 12},			// Channel 5, 922.8 MHz primary
+	{ 923000000, 125, 7, 12, 923000000, 125, 7, 12}, 			// Channel 6, 923.0 MHz primary 
+	{ 922000000, 125, 7, 12, 922000000, 125, 7, 12}	,  			// Channel 7, 922.0 MHz primary
+	{ 922100000, 250, 7,  7,         0,   0, 0,  0}	  			// Channel 8, 922.1 SF7BW250 MHz 
+};
+
+//AS923_925
+#elif defined(AS923_925)
+// AS2 plan or TTN/Lora frequencies For Brunei, Cambodia, Hong Kong, Indonesia, Laos, Taiwan, Thailand, Vietnam
+vector freqs [] = { 
+	{ 923200000, 125, 7, 12, 923200000, 125, 7, 12},			// Channel 0, 923.2 MHz primary
+	{ 923400000, 125, 7, 12, 923400000, 125, 7, 12},			// Channel 1, 923.4 MHz primary
+	{ 923600000, 125, 7, 12, 923600000, 125, 7, 12},			// Channel 2, 923.6 MHz primary
+	{ 923800000, 125, 7, 12, 923800000, 125, 7, 12},			// Channel 3, 923.8 MHz primary
+	{ 924000000, 125, 7, 12, 924000000, 125, 7, 12},			// Channel 4, 924.0 MHz primary
+	{ 924200000, 125, 7, 12, 924200000, 125, 7, 12},			// Channel 5, 924.2 MHz primary
+	{ 924400000, 125, 7, 12, 924400000, 125, 7, 12}, 			// Channel 6, 924.4 MHz primary 
+	{ 924600000, 125, 7, 12, 924600000, 125, 7, 12}	,  			// Channel 7, 924.6 MHz primary
+	{ 924500000, 250, 7,  7,         0,   0, 0,  0}	  			// Channel 8, 917.5 SF7BW250 MHz 
+};
+
 #else
 vector freqs [] = {
 	// Print an Error, Not supported
